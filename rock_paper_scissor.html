@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>rock_paper_scissort</title>
+</head>
+<body>
+<script>
+const string = ["rock", "paper", "scissors"];
+const userInput = prompt("rock, paper or scissors?");
+if (userInput === "paper" || userInput === "rock" || userInput === "scissors") {
+} else {
+  alert("you entered invalid choise!");
+}
+let computerInput = string[Math.floor(Math.random()*3)];
+const winner = Winner(userInput, computerInput);
+function Winner(userInput, computerInput) {
+  if (userInput === 'rock' && computerInput === 'paper') {
+   alert('You lose! ');
+  } else if (userInput === 'scissors' && computerInput === 'paper') {
+    alert('You win! ');
+  } else {
+    alert('You tie!');
+  }
+}
+</script>
+</div>
+
+</body>
+</html>
