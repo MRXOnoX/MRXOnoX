@@ -1,6 +1,7 @@
 - 👋 Hi, I’m @MRXOnoX
 - 👀 I’m interested in ...Codding
 - 🌱 I’m currently learning ...C++
+- 🌱 I’m currently learning ...JS
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
