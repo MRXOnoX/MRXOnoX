@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>js_ceaser_chiper</title>
+</head>
+<body>
+<script>
+function caesars_cipher(str, k) {
+	const numbersArray ="0123456789".split("");
+	const allowedSymbols = "abcdefghijklmnopqrstuvwxyz".split("");
+	let userString = str.split("");
+	let encrypted = "";
+	userString.forEach(item=>{
+		const charToLower = item.toLowerCase();
+		if (item==" ") encrypted+=item;
+
+		else if(numbersArray.indexOf(item)>-1){
+			let newIndex = parseInt(item)+k;
+
+			if (newIndex>=numbersArray.length) {
+				newIndex = newIndex - numbersArray.length;
+			}
+			else if(newIndex<0){
+					newIndex = allowedSymbols.length+newIndex;
+			}
+			encrypted+=numbersArray[newIndex];
+		}
+		else{
+			if (allowedSymbols.indexOf(charToLower)>-1) {
+				let newIndex = allowedSymbols.indexOf(charToLower)+k;
+				
+				if (newIndex>=allowedSymbols.length) {
+					newIndex = newIndex - allowedSymbols.length;
+				}
+				else if(newIndex<0){
+					newIndex = allowedSymbols.length+newIndex;
+				}
+				if (item!=charToLower) encrypted+=allowedSymbols[newIndex].toUpperCase();
+				else encrypted+=allowedSymbols[newIndex];
+			}
+		}
+	});
+	alert(encrypted);
+}
+
+const string = prompt("Enter string you want to encrypt");
+const k = parseInt(prompt("K="));
+caesars_cipher(string, k);
+</script>
+</div>
+
+</body>
+</html>
